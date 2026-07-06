@@ -283,3 +283,53 @@ setInterval(()=>{
     quote.innerHTML=quotes[r];
 
 },4000);
+
+/* ==============================
+        DISCORD POPUP
+============================== */
+
+const discordPopup =
+document.getElementById("discordPopup");
+
+document
+.getElementById("discordBtn")
+.onclick=()=>{
+
+    discordPopup.style.display="flex";
+
+}
+
+document
+.getElementById("closeDiscord")
+.onclick=()=>{
+
+    discordPopup.style.display="none";
+
+}
+
+discordPopup.onclick=(e)=>{
+
+    if(e.target===discordPopup){
+
+        discordPopup.style.display="none";
+
+    }
+
+}
+
+document
+.getElementById("copyDiscord")
+.onclick=()=>{
+
+    const username=
+    document
+    .getElementById("discordName")
+    .innerText;
+
+    navigator
+    .clipboard
+    .writeText(username);
+
+    alert("Đã copy Discord username!");
+
+}
