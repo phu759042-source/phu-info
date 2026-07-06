@@ -1,0 +1,607 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#050816;
+
+    overflow-x:hidden;
+
+    color:white;
+
+}
+
+/* ===========================
+    MATRIX CANVAS
+=========================== */
+
+#matrix{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    z-index:-3;
+
+}
+
+/* ===========================
+    MOUSE LIGHT
+=========================== */
+
+#mouse-light{
+
+    position:fixed;
+
+    width:350px;
+
+    height:350px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    background:
+    radial-gradient(circle,
+    rgba(0,255,255,.25),
+    transparent 70%);
+
+    transform:translate(-50%,-50%);
+
+    z-index:-1;
+
+}
+
+/* ===========================
+    LOADING
+=========================== */
+
+#loader{
+
+    position:fixed;
+
+    width:100%;
+
+    height:100vh;
+
+    background:#050816;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    z-index:999;
+
+}
+
+.loading-bar{
+
+    margin-top:25px;
+
+    width:320px;
+
+    height:8px;
+
+    background:#333;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+}
+
+.loading{
+
+    width:0%;
+
+    height:100%;
+
+    background:cyan;
+
+    animation:load 2.5s linear forwards;
+
+}
+
+@keyframes load{
+
+    to{
+
+        width:100%;
+
+    }
+
+}
+
+/* ===========================
+    MAIN
+=========================== */
+
+.main{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:60px 20px;
+
+}
+
+/* ===========================
+    AVATAR
+=========================== */
+
+.avatar{
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    border:5px solid cyan;
+
+    object-fit:cover;
+
+    box-shadow:
+
+    0 0 30px cyan,
+
+    0 0 60px rgba(0,255,255,.4);
+
+    transition:.4s;
+
+}
+
+.avatar:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+
+    0 0 45px cyan,
+
+    0 0 90px cyan;
+
+}
+
+/* ===========================
+    TITLE
+=========================== */
+
+h1{
+
+    margin-top:25px;
+
+    font-size:50px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+#typing{
+
+    margin-top:10px;
+
+    color:cyan;
+
+    min-height:35px;
+
+}
+
+.quote{
+
+    margin-top:15px;
+
+    color:#aaa;
+
+    font-size:18px;
+
+}
+
+/* ===========================
+   SOCIAL
+=========================== */
+
+.social{
+
+    margin-top:55px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,180px);
+
+    gap:35px;
+
+}
+
+.card{
+
+    height:180px;
+
+    border-radius:25px;
+
+    backdrop-filter:blur(15px);
+
+    background:
+
+    rgba(255,255,255,.08);
+
+    border:
+
+    1px solid rgba(255,255,255,.12);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    text-decoration:none;
+
+    color:white;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.card i{
+
+    font-size:60px;
+
+    margin-bottom:20px;
+
+}
+
+.card span{
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:0;
+
+    background:white;
+
+    border-radius:50%;
+
+    opacity:.18;
+
+    transition:.45s;
+
+}
+
+.card:hover::before{
+
+    width:450px;
+
+    height:450px;
+
+}
+
+.card:hover{
+
+    transform:
+
+    translateY(-15px)
+
+    scale(1.1)
+
+    rotate(-2deg);
+
+}
+
+.facebook:hover{
+
+    background:#1877F2;
+
+    box-shadow:0 0 40px #1877F2;
+
+}
+
+.youtube:hover{
+
+    background:#ff0000;
+
+    box-shadow:0 0 40px red;
+
+}
+
+.github:hover{
+
+    background:#24292e;
+
+    box-shadow:0 0 40px white;
+
+}
+
+.zalo:hover{
+
+    background:#0084ff;
+
+    box-shadow:0 0 40px #00c8ff;
+
+}
+
+/* ===========================
+    SKILL
+=========================== */
+
+.skills{
+
+    margin-top:70px;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:18px;
+
+    max-width:1000px;
+
+}
+
+.skills div{
+
+    padding:14px 26px;
+
+    border-radius:35px;
+
+    background:
+
+    rgba(255,255,255,.08);
+
+    border:
+
+    1px solid rgba(255,255,255,.12);
+
+    transition:.35s;
+
+}
+
+.skills div:hover{
+
+    background:cyan;
+
+    color:black;
+
+    transform:scale(1.1);
+
+}
+
+/* ===========================
+    POPUP
+=========================== */
+
+#popup{
+
+    position:fixed;
+
+    width:100%;
+
+    height:100vh;
+
+    top:0;
+
+    left:0;
+
+    background:rgba(0,0,0,.6);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.popup-box{
+
+    width:400px;
+
+    background:#111827;
+
+    border-radius:25px;
+
+    padding:40px;
+
+    text-align:center;
+
+    border:1px solid cyan;
+
+    animation:popup .3s;
+
+}
+
+.popup-box i{
+
+    margin-top:20px;
+
+    font-size:50px;
+
+    color:cyan;
+
+}
+
+.popup-box h3{
+
+    margin-top:20px;
+
+    font-size:28px;
+
+}
+
+.popup-box button{
+
+    margin-top:30px;
+
+    width:160px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:cyan;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+}
+
+@keyframes popup{
+
+    from{
+
+        transform:scale(.5);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ===========================
+    RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+.social{
+
+grid-template-columns:repeat(2,180px);
+
+}
+
+h1{
+
+font-size:38px;
+
+}
+
+}
+
+@media(max-width:500px){
+
+.social{
+
+grid-template-columns:1fr;
+
+}
+
+.avatar{
+
+width:140px;
+
+height:140px;
+
+}
+
+h1{
+
+font-size:30px;
+
+}
+
+}
+/* ==========================
+        RIPPLE
+========================== */
+
+.ripple{
+
+    position:absolute;
+
+    width:10px;
+
+    height:10px;
+
+    background:white;
+
+    border-radius:50%;
+
+    transform:translate(-50%,-50%);
+
+    animation:ripple .7s linear;
+
+    opacity:.5;
+
+}
+
+@keyframes ripple{
+
+    from{
+
+        width:0;
+
+        height:0;
+
+        opacity:.6;
+
+    }
+
+    to{
+
+        width:450px;
+
+        height:450px;
+
+        opacity:0;
+
+    }
+
+}
