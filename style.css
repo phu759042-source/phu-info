@@ -635,3 +635,11 @@ font-size:30px;
     background:rgba(0,0,0,.6);
 
 }
+
+.linkedin:hover{
+
+    background:#0084ff;
+
+    box-shadow:0 0 40px #00c8ff;
+
+}
